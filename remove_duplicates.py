@@ -2,10 +2,22 @@ import os
 import sys
 
 def get_file_content(file_path):
+    """
+    Read and return the content of a file.
+
+    Args:
+        file_path (str): The path to the file.
+    """
     with open(file_path, 'r') as file:
         return file.read()
 
 def check_duplicates(directory_path):
+    """
+    Duplicate files in a directory based on their content.
+
+    Args:
+        directory_path (str): The path to the directory.
+    """
     content_files = {}
 
     for root, _, files in os.walk(directory_path):
@@ -22,6 +34,12 @@ def check_duplicates(directory_path):
 
 
 def delete_duplicates(all_duplicate_files):
+    """
+    Delete duplicate files based on user input.
+
+    Args:
+        all_duplicate_files (list): A list of sets, where each set contains paths of files with identical content.
+    """
     if not all_duplicate_files:
         print("There are no files with identical content found.")
     else:
@@ -56,6 +74,7 @@ def delete_duplicates(all_duplicate_files):
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python remove_duplicates.py <directory_path>")
+        print("Example: python remove_duplicates.py C:\\Users\\iosub\\OneDrive\\Documents\\GitHub\\PythonProjectC2023-2024\\test")
     else:
         directory_path = sys.argv[1]
         print(directory_path)

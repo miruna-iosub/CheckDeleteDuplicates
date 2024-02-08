@@ -2,7 +2,6 @@
 
 - **Name:** Remove Duplicates
 - **ID:** 1
-- **Difficulty:** C
 
 ## Overview
 
